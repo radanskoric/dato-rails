@@ -1,4 +1,4 @@
-<% block = blocks&.find { |b| b.id == @node.item } %>
+<% block = inline_blocks&.find { |b| b.id == @node.item } %>
 <% if block.nil? %>
   <%= error_block do %>
     There is an inline block with id <code><%= @node.item %></code> that has not been retrieved by the GraphQL Query.<br>

@@ -17,6 +17,10 @@ module Dato
       root.blocks
     end
 
+    def inline_blocks
+      root.inlineBlocks
+    end
+
     def links
       root.links
     end
@@ -51,7 +55,7 @@ module Dato
       begin
         class_name || class_by_type(inline_item.__typename).constantize
       rescue NameError
-        nil
+        Dato::UnknownInlineBlock
       end
     end
 
